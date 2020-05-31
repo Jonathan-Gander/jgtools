@@ -1,36 +1,17 @@
 //
 //  JGTools.m
 //
-//  Created by Jonathan Gander on 07.05.20.
-//  Copyright © 2020 Jonathan Gander. All rights reserved.
+//  Created by Jonathan Gander
+//  https://github.com/Sigmanet15/jgtools
+//  https://gander.family
 //
 
 #import "JGTools.h"
 
 @implementation JGTools
 
-#pragma mark - Alert
-+ (void)displayAlertIn:(UIViewController *)viewController
-             withTitle:(NSString *)title
-               message:(NSString *)message
-          cancelButton:(NSString *)button {
-    
-    if (viewController == nil) {
-        return;
-    }
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:button
-                                              style:UIAlertActionStyleCancel
-                                            handler:NULL]];
-    
-    [viewController presentViewController:alert animated:YES completion:nil];
-}
-
 #pragma mark - Color
+
 + (UIColor *)colorWithHexString:(NSString *)str {
     if (![[str substringToIndex:1] isEqualToString:@"#"])
         str = [NSString stringWithFormat:@"#%@",str];

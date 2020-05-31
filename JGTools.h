@@ -1,8 +1,9 @@
 //
 //  JGTools.h
 //
-//  Created by Jonathan Gander on 07.05.20.
-//  Copyright © 2020 Jonathan Gander. All rights reserved.
+//  Created by Jonathan Gander
+//  https://github.com/Sigmanet15/jgtools
+//  https://gander.family
 //
 
 #import <Foundation/Foundation.h>
@@ -13,13 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JGTools : NSObject
 
-// Alert
-+ (void)displayAlertIn:(UIViewController *)viewController
-             withTitle:(NSString *)title
-               message:(NSString *)message
-          cancelButton:(NSString *)button;
-
-// Color
+#pragma mark - Color
+/**
+* Get a UIColor from a hex string
+* @param str String representing hex for color. It can start with or without '#'.
+* @return UIColor for hex string
+*/
 + (UIColor *)colorWithHexString:(NSString *)str;
 
 @end
