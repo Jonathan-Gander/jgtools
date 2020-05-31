@@ -30,6 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)deviceLanguage;
 
 /**
+ * Check if an URL string is an image. It only check for extension.
+ * Note : A better solution would be to make a HEAD request and read Content-Type header.
+ * @param string URL string
+ * @return YES if URL is an image, NO otherwise
+ */
++ (BOOL)urlStringIsImage:(NSString *)string;
+
+/**
  * Bearing between two coordinates
  * @param coordinate1 First coordinate
  * @param coordinate2 Second coordinate

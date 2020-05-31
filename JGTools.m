@@ -43,6 +43,18 @@
     return language;
 }
 
+#pragma mark - Image
++ (BOOL)urlStringIsImage:(NSString *)string {
+    NSArray *imageExtensions = @[@"jpg", @"jpeg", @"jpe", @"jif", @"jfif", @"jfi", @"png", @"gif", @"webp", @"tiff", @"tif", @"bmp", @"jp2", @"j2k", @"jpf", @"jpx", @"jpm", @"mj2"];
+
+    NSURL *url = [NSURL URLWithString:string];
+    if (url == nil) {
+        return NO;
+    }
+    
+    NSString *extension = [[url pathExtension] lowercaseString];
+    return [imageExtensions containsObject:extension];
+}
 #pragma mark - Bearing
 + (double)bearingFromCoordinate:(CLLocationCoordinate2D)coordinate1 toCoordinate:(CLLocationCoordinate2D)coordinate2 {
     
