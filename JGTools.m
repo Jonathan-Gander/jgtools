@@ -27,4 +27,16 @@
     r = (col >> 16) & 0xFF;
     return [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:1];
 }
+
+#pragma mark - Device language
++ (NSString *)deviceLanguage {
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSRange startRange = [language rangeOfString:@"-"];
+    if (startRange.location != NSNotFound) {
+        language = [language substringToIndex:startRange.location];
+    }
+
+    return language;
+}
+
 @end
