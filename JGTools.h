@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JGTools : NSObject
 
+#pragma mark - Numbers
++ (NSInteger)randomIntegerBetweenMin:(NSInteger)min andMax:(NSInteger)max;
+
 #pragma mark - Color
 + (UIColor *)colorWithHexString:(NSString *)str;
 

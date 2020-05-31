@@ -14,6 +14,21 @@
 
 @implementation JGTools
 
+#pragma mark - Numbers
+/**
+ * Get random number between min and max
+ * @min Min value (included)
+ * @max Max value (included)
+ */
++ (NSInteger)randomIntegerBetweenMin:(NSInteger)min andMax:(NSInteger)max {
+    if (max < min) {
+        NSInteger oldMax = max;
+        max = min;
+        min = oldMax;
+    }
+    return min + arc4random() % (max + 1 - min);
+}
+
 #pragma mark - Color
 /**
  * Get a UIColor from a hex string
